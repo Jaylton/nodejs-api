@@ -21,25 +21,25 @@ Esta é uma API simples construída com Node.js, Fastify e Knex para gerenciar t
 
 1. Clone o repositório:
 
-   ```
+   ```console
    git clone https://github.com/seu-usuario/transaction-api.git
    ```
    
 2. Acesse a pasta do projeto:
 
-    ```
+    ```console
     cd transaction-api
     ```
 
 3. Instale as dependências:
 
-    ```
+    ```console
     npm install
     ```
 
 4. Execute as migrações do banco de dados:
 
-    ```
+    ```console
     npx knex migrate:latest
     ```
 
@@ -48,24 +48,24 @@ Esta é uma API simples construída com Node.js, Fastify e Knex para gerenciar t
 O projeto utiliza variáveis de ambiente para configurar a conexão com o banco de dados.
 1. Crie o arquivo .env (ou copie do .env.example como base):
 
-    ```
+    ```console
     cp .env.example .env
     ```
 2. Crie o arquivo .env.test (ou copie do .env.example como base):
 
-    ```
+    ```console
     cp .env.example .env.test
     ```
 3. Configure as variáveis de ambiente no .env.test para corresponder ao seu ambiente de testes. Um exemplo de configuração para o SQLite:
 
-    ```
+    ```console
     DATABASE_URL="./db/test.db"
     ```
 
 ## Uso
 1. Inicie o servidor de desenvolvimento:
 
-    ```
+    ```console
     npm run dev
     ```
 2. A API estará disponível em http://localhost:3000.
@@ -78,7 +78,7 @@ O projeto utiliza variáveis de ambiente para configurar a conexão com o banco 
 
  - Body Exemplo:
 
-    ```
+    ```json
     {
       "title": "Compra no supermercado",
       "amount": 150.75,
@@ -94,7 +94,7 @@ O projeto utiliza variáveis de ambiente para configurar a conexão com o banco 
 
  - Resposta:
 
-    ```
+    ```json
     {
         "transactions": [
             {
@@ -121,7 +121,7 @@ O projeto utiliza variáveis de ambiente para configurar a conexão com o banco 
  - Descrição: Retorna os detalhes de uma transação específica, usando o ID.
 
  - Resposta:
-    ```
+    ```json
     {
         "transaction": {
             "id": "418156fa-e7b2-4dbc-a438-52d7e49a5293",
@@ -139,7 +139,7 @@ O projeto utiliza variáveis de ambiente para configurar a conexão com o banco 
 - Descrição: Retorna a soma total de todas as transações do usuário.
 
  - Resposta:
-    ```
+    ```json
     {
       "total": {
         "total": 14000
@@ -150,11 +150,11 @@ O projeto utiliza variáveis de ambiente para configurar a conexão com o banco 
 ## Testes
 Os testes foram implementados utilizando o Vitest. Para rodar os testes:
 1. Execute o comando:
-    ```
+    ```console
     npm run test
     ```
 
 2. Para rodar os testes com watch (testes em tempo real durante o desenvolvimento):
-    ```
+    ```console
     npm run test:watch
     ```
