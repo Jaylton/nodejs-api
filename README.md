@@ -82,21 +82,10 @@ O projeto utiliza variáveis de ambiente para configurar a conexão com o banco 
     {
       "title": "Compra no supermercado",
       "amount": 150.75,
-      "type": "expense"
+      "type": "credit"
     }
     ```
 
- - Resposta:
-
-    ```
-    {
-      "id": 1,
-      "title": "Compra no supermercado",
-      "amount": 150.75,
-      "type": "expense",
-      "created_at": "2024-10-05T12:00:00.000Z"
-    }
-    ```
 
 ### Listar transações do usuário
 ### GET /transactions
@@ -106,22 +95,24 @@ O projeto utiliza variáveis de ambiente para configurar a conexão com o banco 
  - Resposta:
 
     ```
-    [
-      {
-        "id": 1,
-        "title": "Compra no supermercado",
-        "amount": 150.75,
-        "type": "expense",
-        "created_at": "2024-10-05T12:00:00.000Z"
-      },
-      {
-        "id": 2,
-        "title": "Salário",
-        "amount": 3000.00,
-        "type": "income",
-        "created_at": "2024-10-01T09:30:00.000Z"
-      }
-    ]
+    {
+        "transactions": [
+            {
+                "id": "418156fa-e7b2-4dbc-a438-52d7e49a5293",
+                "title": "Test transaction",
+                "amount": -645,
+                "created_at": "2024-10-05 23:23:57",
+                "session_id": "5713b351-5aac-4dd7-8c14-d329a71d71dd"
+            },
+            {
+                "id": "66e5414e-de7d-412c-b323-b7820173e6b5",
+                "title": "Trasanction 2",
+                "amount": 14645,
+                "created_at": "2024-10-05 23:25:37",
+                "session_id": "5713b351-5aac-4dd7-8c14-d329a71d71dd"
+            }
+        ]
+    }
     ```
 
 ### Obter uma transação específica
@@ -132,23 +123,27 @@ O projeto utiliza variáveis de ambiente para configurar a conexão com o banco 
  - Resposta:
     ```
     {
-      "id": 1,
-      "title": "Compra no supermercado",
-      "amount": 150.75,
-      "type": "expense",
-      "created_at": "2024-10-05T12:00:00.000Z"
+        "transaction": {
+            "id": "418156fa-e7b2-4dbc-a438-52d7e49a5293",
+            "title": "Trasanction 2",
+            "amount": -645,
+            "created_at": "2024-10-05 23:23:57",
+            "session_id": "5713b351-5aac-4dd7-8c14-d329a71d71dd"
+        }
     }
     ```
     
 ### Somar o valor total das transações
-### GET /transactions/total
+### GET /transactions/summary
 
 - Descrição: Retorna a soma total de todas as transações do usuário.
 
  - Resposta:
     ```
     {
-      "totalAmount": 3150.75
+      "total": {
+        "total": 14000
+        }
     }
     ```
 
