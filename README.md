@@ -22,13 +22,13 @@ Esta é uma API simples construída com Node.js, Fastify e Knex para gerenciar t
 1. Clone o repositório:
 
    ```console
-   git clone https://github.com/seu-usuario/transaction-api.git
+   git clone https://github.com/Jaylton/nodejs-api.git
    ```
    
 2. Acesse a pasta do projeto:
 
     ```console
-    cd transaction-api
+    cd nodejs-api
     ```
 
 3. Instale as dependências:
